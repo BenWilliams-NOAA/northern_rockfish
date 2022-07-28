@@ -39,7 +39,14 @@
 *.std
 *.prj
 2020
-
+2022/srv_sensitivity
+2022/base
+2022/no_srv
+2022/m18.b_length
+2022/m18.2_rewt
+2022/m18.2_nowt
+2022/data
+2022/code
 test
 *.tex
 *.docx
