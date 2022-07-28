@@ -39,7 +39,6 @@ Both estimates are above the estimate of B35% at 29,691 t and, therefore, the st
 ```
 
 
-If you are so kind as to provide tables for the plan team, place them here
 
 ```{r, child= "01c-plan_team.Rmd", eval = T}
 
