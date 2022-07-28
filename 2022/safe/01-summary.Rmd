@@ -1,0 +1,48 @@
+# Executive Summary
+
+We use a statistical age-structured model as the primary assessment tool for GOA northern rockfish which qualifies as a Tier 3 stock. 
+This assessment consists of a population model, which uses survey and fishery data to generate a historical time series of population estimates, and a projection model, which uses results from the population model to predict future population estimates and recommended harvest levels. 
+The data sets used in this assessment include total catch biomass, fishery age and size compositions, trawl survey abundance estimates, and trawl survey age compositions. 
+ For Gulf of Alaska northern rockfish in `r year`, we present a full assessment with updated assessment and projection model results to recommend harvest levels for the next two years.
+
+## Summary of Changes in Assessment Inputs
+*Changes to input data:* The input data were updated to include survey biomass estimates for 2021, survey age compositions for 2021, final catch for 2020 and 2021, preliminary catch for `r year`, fishery age compositions for ??, and fishery size compositions for 2020 and 2021. 
+The survey biomass estimate is upon the Groundfish Assessment Program’s Vector Autoregressive Spatio-temporal (VAST) model for the GOA through 2021.  
+
+*Changes in assessment methodology:* 
+List of changes (if any) in the assessment methodology. 
+**This is one of the most important sections of the SAFE report**. 
+Common mistakes in this section include: 1) listing something that *has not* changed, and 2) not listing something that *has* changed.
+
+
+## Summary of Results
+
+The `r year + 1` projected age 2+ total biomass is **102,715** t. 
+The recommended ABC for `r year + 1` is **5,358 t**, the maximum allowable ABC under Tier 3a. 
+This ABC is a **24%** increase compared to the `r year` ABC of 4,312 t and a *30%* increase from the projected `r year+1` ABC from last year. 
+The `r year + 1` GOA-wide OFL for northern rockfish is **6,396** t. 
+Reference values for northern rockfish are summarized in the following table.
+
+```{r, child= "01a-main_table.Rmd", eval = T}
+
+```
+
+The stock is not being subject to overfishing, is not currently overfished, nor is it approaching a condition of being overfished. 
+The tests for evaluating these three statements on status determination require examining the official total catch from the most recent complete year and the current model projections of spawning biomass relative to B35% for 2019 and 2021. 
+The official total catch for 2019 is 2,748 t, which is less than the 2019 OFL of 5,402 t; therefore, the stock is not being subjected to overfishing. 
+The estimates of spawning biomass for 2021 and 2022 from the projection model used this year (2020) are 42,791 t and 40,462 t, respectively. 
+Both estimates are above the estimate of B35% at 29,691 t and, therefore, the stock is not currently overfished nor approaching an overfished condition.
+
+
+```{r, child= "01b-apportionment.Rmd", eval = T}
+
+```
+
+
+If you are so kind as to provide tables for the plan team, place them here
+
+```{r, child= "01c-plan_team.Rmd", eval = T}
+
+```
+
+

@@ -1,0 +1,93 @@
+# Results
+
+## Model Evaluation
+
+The model used in this assessment is changed from the accepted model in 2020. 
+When we present alternative model configurations, our usual criteria for choosing a superior model are: (1) the best overall fit to the data (in terms of negative log-likelihood), (2) biologically reasonable patterns of estimated recruitment, catchabilities, and selectivity, (3) a good visual fit to length and age compositions, and (4) parsimony. 
+Because the changes for the current assessment involve updating data we do not perform the usual model comparison. 
+However, the figure below shows the influence on model estimates of total and spawning biomass compared to Model 2018.2 (the 2018 assessment model with updated data), Model 18.2a and 18.2b include the data updates previously described.
+
+Conduct within-model retrospective analysis by rerunning each model successively, dropping data one year at a time.
+Specifically:
+
+1. Include retrospective analysis extending back 10 years, plot spawning biomass estimates and error bars, plot relative differences, and report Mohn's “rho” statistic (see **Retrospective Working Group report** for formula, *not* Mohn’s 1999 paper).
+2. Communicate the uncertainty implied by retrospective variability in biomass estimates.
+3. For the time being, *do not* disqualify a model on the grounds of poor retrospective performance alone.
+4. *Do* consider retrospective performance as one factor in model selection.
+
+Description of other criteria used to evaluate the model or to choose between alternative models, including the role (if any) of uncertainty.  
+Evaluation of the model, if only one model is presented; or evaluation of alternative models and selection of final model, if more than one model is presented.  
+List of final parameter estimates, **with confidence bounds** or other statistical measures of uncertainty if possible (if the set of parameters includes quantities listed in the “Time Series Results” section below, the values of these quantities should be presented in the “Time Series Results” section rather than here).
+
+Schedules, if any, defined by final parameter estimates
+
+
+## Time Series Results
+
+#### Definitions
+Spawning biomass is the biomass estimate of mature females. 
+Total biomass is the biomass estimate of all northern rockfish age two and greater. 
+Recruitment is measured as the number of age-2 northern rockfish. 
+Fishing mortality is the mortality at the age the fishery has fully selected the fish. 
+
+#### Biomass and exploitation trends
+The estimates of current population abundance indicate that it is dominated by fish from the 1993 and 1998 year-classes (Table 10-13). 
+Since the early 1990s the total biomass estimated in the model has been decreasing from a high of over 189,000 t in 1992 (Figure 10-8). 
+Similarly, the spawning biomass estimated in the model has also been decreasing since 1998. 
+However, the fit to the VAST model-based survey biomass index fails to capture the apparent increase in northern rockfish abundance indicated by point estimates of the 2005, 2007, 2013, and 2017 trawl surveys (Figure 10-4). 
+Higher survey indices in these years may represent significant abundances of northern rockfish that are not fully accounted for in assessed biomass, but may also simply represent variation in survey catchability.
+
+@Goodman2002 suggested that stock assessment authors use a “management path” graph as a way to evaluate management and assessment performance over time. 
+In the management path we plot the ratio of fishing mortality to $F_{OFL}$ ($F_{35\%}$) and the estimated spawning biomass relative to $B_{35\%}$. 
+Harvest control rules based on $F_{35\%}$ and $F_{40\%}$ and the tier 3b adjustment are provided for reference. 
+The historical management path for northern rockfish has been above the $F_{OFL}$ adjusted limit for only a few years in the 1960s. 
+In recent years, northern rockfish have been above $B_{35\%}$ and below $F_{35\%}$ (Figure 10-9). 
+The trajectory of fishing mortality has remained below the $F_{40\%}$ level most of the time and below $F_{35\%}$ in all years except 1964-66 during the period of intense fishing for Pacific ocean perch (Figure 10-9). 
+Parameter estimates from this year’s model were similar to the previous northern rockfish assessment (Table 10-12). 
+Selectivity estimates for the fishery and the survey are similar, but with the survey selectivity increasing somewhat more gradually with age. 
+Compared to the maturity at age curve that is estimated, selectivity occurs at slightly younger ages than the age of maturity (Table 10-13 and Figure 10-10).
+
+#### Recruitment
+Recruitment estimates show a high degree of uncertainty, but indicate several large year-classes in the early and late 1970’s, early 1980’s and mid 1990’s (Table 10-14 and 10-15 and Figure 10-11). 
+Recent recruitment since 2005 has been considerably lower than the 1970 – 2005. 
+There is no clear trend between recruitment and spawning stock biomass (Figure 10-12). 
+Fits to the fishery and survey age compositions were reasonable with this year’s recommended model (Figures 10-3 and 10-6).
+Increasing proportions of GOA northern rockfish in the plus age or length groups for both survey and fishery composition indicate a substantial number of individuals are successfully surviving natural and fishing mortality to attain old age and large size.
+
+#### Uncertainty results
+From the MCMC chains described in Uncertainty approach, we summarize the posterior densities of key parameters for the recommended model using histograms (Figure 10-13) and credible intervals (Table 10-16). 
+We also use these posterior distributions to show uncertainty around time series estimates of total and spawning biomass (Figure 10-8), fully selected fishing mortality (Figure 10-9) and recruitment (Figure 10-11).
+
+Table 10-16 shows the maximum likelihood estimate (MLE) of key parameters with their corresponding standard deviation derived from the Hessian matrix. 
+Also shown are the MCMC, mean, median, standard deviation and the corresponding Bayesian 95% credible intervals (BCI).
+The Hessian and MCMC standard deviations are similar for M, but the MCMC standard deviations are larger for the estimates of q, $F_{40\%}$, ABC, and female spawning biomass. 
+These larger standard deviations indicate that these parameters are more uncertain than indicated by the Hessian approximation.
+The distributions of these parameters are slightly skewed with higher means than medians for current spawning biomass and ABC, indicating possibilities of higher biomass estimates (Figure 10-13). 
+Uncertainty estimates in the time series of spawning biomass also result in a skewed distribution towards higher values, particularly at the end of the time series and into the 15 year projected times series (Figure 10-14).
+
+A within-model retrospective analysis of the recommended model was conducted for the last 10 years of the time-series by dropping data one year at a time. 
+The revised Mohn’s “rho” statistic [@Hanselman2013] in female spawning biomass was **-0.236**, indicating that the model increases the estimate of female spawning biomass in recent years as data is added to the assessment. 
+The retrospective female spawning biomass and the relative difference in female spawning biomass from the model in the terminal year are shown in Figure 10-15 (with 95% credible intervals from MCMC). 
+In general, the relative difference in female spawning biomass in recent years ranged from around -27% to around -3%, but there are some large changes in the mid- to late-1970s.
+
+For Tiers 1-3, items in this section pertain to the authors’ recommended model.)
+
+Include a table that has a set of parallel key results) for the previously accepted assessment, compared with new results. At a minimum this table should include spawning biomass and recruitment. 
+
+Definition of biomass measures used (e.g., age range used in the “age+” biomass)
+
+Definition of recruitment measures used (e.g., numbers at age 3)
+
+Table of estimated biomass time series, including age+ biomass and spawning biomass, **with confidence bounds** or other statistical measure of uncertainty if possible. 
+The time series included in this table **should end with estimates for the projection year**. Include estimates from previous SAFE for retrospective comparison.
+
+Table of estimated recruitment time series, including average of year classes spawned after 1976, **with confidence bounds** or other statistical measure of uncertainty if possible.  Include estimates from previous SAFE for retrospective comparisons
+
+Table of estimated numbers at age. 
+
+Graph of estimated biomass time series, with confidence bounds if possible
+
+Graph of estimated fishing mortality versus estimated spawning stock biomass (phase-plane plot), including applicable OFL and maximum FABC definitions for the stock. 
+Biomass should be scaled relative to $B_{MSY}$ for Tier 1 stocks and %B_{35\%}$ for Tier 3 stocks. 
+Fishing mortality should be scaled relative to the arithmetic mean of $F_{MSY}$ for Tier 1 stocks and $F_{35\%}$ for Tier 3 stocks. 
+Include 2 years of projected *F* and *B* in the phase-plane plot.

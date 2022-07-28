@@ -1,0 +1,137 @@
+# Analytical approach
+
+## General Model Structure
+>Description of overall modeling approach (e.g., age/size structured versus biomass dynamic, maximum likelihood versus Bayesian)
+If standardized software (e.g., Stock Synthesis) is used, give reference to technical documentation where variables and equations are described.  If standardized software is not used, then list variables and equations used in the assessment model(s) in tables or appendices as appropriate.
+
+The Gulf of Alaska northern rockfish is described as a separable age-structured model assessment is based on a statistical age-structured model with the catch equation and population dynamics model as described in @Fournier1982 and elsewhere (e.g., @Hilborn1992; @Schnute1995, @McAllister1997) and was implemented using AD Model Builder software [@Fournier2012]. 
+The assessment model is based on a generic rockfish model developed in a workshop held in February 2001 [@Courtney2007] and follows closely the GOA Pacific ocean perch model [@Hulson2021]. 
+The northern rockfish model is fit to time series extending from 1961-`r year`. 
+As with other rockfish age-structured models, this model does not attempt to fit a stock-recruitment relationship but estimates a mean recruitment, which is adjusted by estimated recruitment deviations for each year. 
+The parameters, population dynamics, and equations of the model are shown below.
+
+\begin{align}
+    C_{t,a}     &= \frac{F_{t,a}}{Z_{t,a}} \left(1 - e^{-Z_{t,a}}\right) N_{t,a}, &1 \le t \le T, 1 \le a \le A \\
+    N_{t+1,a+1} &= N_{t,a-1} e^{-Z_{t,a-1}},                                      &1 \le t \le T, 1 \le a < A   \\
+    N_{t+1,A}   &= N_{t,A-1} e^{-Z_{t,A-1}} + N_{t,A} e^{-Z_{t,A}} ,              &1 \le t \le T                \\
+    Z_{t,a}     &= F_{t,a} + M_{t,a}                                              &                             \\
+    C_{t,.}     &= \sum_{a=1}^A{C_{t,a}}                                          &                             \\
+    p_{t,a}     &= \frac{C_{t,a} } {C_{t,.} }                                     &                             \\
+    Y_{t}       &= \sum_{a=1}^A{w_{t,a}C_{t,a}}                                   &                             \\
+\end{align}
+
+where
+
+|           |                       |
+|:----------|:----------------------|
+|$T$       | is the number of years, |
+|$A$       | is the number of age classes in the population, |
+|$N_{t,a}$ | is the number of fish age $a$ in year $t$, |
+|$C_{t,a}$ | is the catch of age class $a$ in year $t$, |
+|$p_{t,a}$ | is the proportion of the total catch in year $t$, that is in age class $a$, |
+|$C_{t}$   | is the total catch in year $t$, |
+|$w_{a}$   | is the mean body weight (kg) of fish in age class $a$, |
+|$Y_{t}$   | is the total yield biomass in year $t$, |
+|$F_{t,a}$ | is the instantaneous fishing mortality for age class $a$, in year $t$, |
+|$M_{t,a}$ | is the instantaneous natural mortality in year $t$ for age class $a$, and |
+|$Z_{t,a}$ | is the instantaneous total mortality for age class $a$, in year $t$. |
+
+
+## Description of Alternative Models
+>Description of alternative models included in the assessment, if any (e.g., alternative M values or likelihood weights); note that the base model (i.e., the model most recently accepted by the SSC, either after reviewing the previous year’s final assessment or the current year’s preliminary assessment) must be included
+Per recommendation of the SSC (10/15), please use the following convention for numbering models:
+When a model constituting a “major change” from the original version of the base model is introduced, it is given a label of the form “Model *yy.j*,” where *yy* is the year (designated by the last two digits) that the model was introduced, and *j* is an integer distinguishing this particular “major change” model from other “major change” models introduced in the same year.
+When a model constituting only a “minor change” from the original version of the base model is introduced, it is given a label of the form “Model *yy.jx*,” where *x* is a letter distinguishing this particular “minor change” model from other “minor change” models derived from the original version of the same base model.
+Specifically, please use one of the following four options to distinguish “major” from “minor” changes:
+
+>*Option A*  
+The original version of the base model is the base model from the earliest year relative to which the current base model constitutes only a minor change. 
+If Model *yy.j* is the original version of the base model and some other model (provisionally labeled “Model *M*”) is introduced in year 20zz, define the “average difference in spawning biomass” (ADSB) between Model *M* and Model *yy.j* as:
+
+$$ ADSB = \sqrt{\sum^{2000+yy}_{y=1977}\frac{(SB_{Model M,y} / SB_{Model yy.j.y} - 1)^2}{yy + 24}}, $$
+
+>where both models are run with data through year 20*yy* only (i.e., the year in which the original version of the base model was introduced).  If ADSB<0.1, the final name of Model *M* should be of the form *Model yy.jx*, where *x* is a letter.  If ADSB≥0.1, the final name should be of the form *Model zz.i*, where *i* is an integer.  For Tiers 4-5, survey biomass may be used in place of spawning biomass in the above.
+
+>*Option B*  
+Same as Option A, except that the model approved by the SSC in 2014 is considered to be the original version of the base model in all cases.  **The SSC noted that Option B can be used if Option A “poses a significant time commitment for the analyst.”**
+
+>*Option C*  
+Same as Option A, except that the distinction between “major” and “minor” model changes is determined subjectively by the author on the basis of qualitative differences in model structure rather than the performance-based criterion described in Option A.  The SSC noted that Option C can be used “where needed.”
+
+>*Option D*  
+Options B and C combined.
+
+
+## Parameters Estimated Outside the Assessment Model
+
+A von Bertalanffy growth curve was fitted, for both sexes combined, to survey size at age data from 1984-2017 using length-stratified methods [@Quinn1999; @Bettoli2001]. 
+An age to size conversion matrix was then constructed by adding normal error with a standard deviation equal to the survey data for the probability of different sizes for each age class.
+Previous parameters are available from @Heifetz199; @Courtney1999; and @Malecha2007. 
+The estimated parameters for the growth curve from length-stratified methods are:  
+$L_\infty$ = 41.32 cm, $\kappa$ = 0.17, and $t_0$ = -0.21.
+
+Weight-at-age was constructed with weight at age data from the same data set as the length at age.
+Mean weight-at-age is approximated by the equation: 
+$$W_a =W_\infty (1-e^(-\kappa(age-t_0 ) ) )^b.$$ 
+The estimated growth parameters from length-stratified methods are:  
+$W_\infty$ = 1047 g, $\kappa$ = 0.18, $t_0$ = -0.001, and *b* = 3.04.
+
+Aging error matrices were constructed by assuming that the break-and-burn ages were unbiased but had a given amount of normal error around each age based on between-reader percent agreement tests conducted at the AFSC Age and Growth lab. 
+We fix the variability of recruitment deviations ($\sigma_r$) at 1.5 which allows highly variable recruitment.
+
+
+## Parameters Estimated Inside the Assessment Model
+
+The estimates of natural mortality (*M*) and catchability (*q*) are estimated with the use of lognormal prior distributions as penalties that are added to the overall objective function in order to constrain parameter estimates to reasonable values and to speed model convergence.
+Arithmetic means and standard errors ($\mu, \sigma$) for the lognormal distributions were provided as inputs to the model. 
+The standard errors for selected model parameters were estimated based on multivariate normal approximation of the covariance matrix. 
+The prior mean for natural mortality of 0.06 is based on the estimate provided by @Heifetz1991 using the methods of @Alverson1975. 
+Natural mortality is a difficult parameter to estimate within the model so we assign a “tight” prior CV of 5%. 
+Catchability is a parameter that is unclear for rockfish, so while we assign it a prior mean of 1 (assuming all fish in the area swept are captured and there is no herding of fish from outside the area swept, and that there is no effect of untrawlable grounds), we assign it a less precise CV of 45%. 
+This allows the parameter more freedom than that allowed to natural mortality. 
+These methods are also used in the GOA Pacific ocean perch and GOA dusky rockfish assessments.
+Maturity-at-age is modeled with the logistic function, similar to selectivity-at-age for the survey and fishery. 
+The fit to the two studies that have provided maturity data for northern rockfish from the model is shown in Figure 10-10. 
+Given that we are using Bayesian estimation, there is no need to implement a recruitment bias-correction algorithm [e.g., @Methot2011].
+The numbers of estimated parameters from the model are:
+
+
+|Parameter  | Symbol                | Number        |
+|:----------|:----------------------|:--------------|
+|Natural mortality               | $M$            | 1 | 
+|Catchability                    | $q$            | 1 |
+|Log-mean-recruitment            | $\mu_r$        | 1 |
+|Spawners-per-recruit levels     | $F_{35\%}, F_{40\%}, F_{100\%}$ | 3 | 
+|Recruitment deviations          | $\epsilon^r_y$ | 108 |
+|Average fishing mortality       | $\mu_f$        | 1 |
+|Fishing mortality deviations    | $\epsilon^f_y$ | 60 |
+|Fishery selectivity coefficients| $S^f_a$        | 2 |
+|Survey selectivity coefficients | $S^t_a$        | 2 |
+|Maturity-at-age coefficients    | $\hat{m}_a$    | 2 |
+|Total                           |                | 181 |
+
+Evaluation of model uncertainty has recently become an integral part of the “precautionary approach” in fisheries management. 
+In complex stock assessment models such as this model, evaluating the level of uncertainty is difficult. 
+One way is to examine the standard errors of parameter estimates from the Maximum Likelihood (ML) approach derived from the Hessian matrix. 
+While these standard errors give some measure of variability of individual parameters, they often underestimate their variance and assume that the joint distribution is multivariate normal. 
+An alternative approach is to examine parameter distributions through Markov Chain Monte Carlo (MCMC) methods [@Gelman1995]. 
+When treated this way, our stock assessment is a large Bayesian model, which includes informative (e.g., lognormal natural mortality with a small CV) and non-informative (or nearly so, such as a parameter bounded between 0 and 10) prior distributions. In the model presented in this SAFE report, the number of parameters estimated is 181. 
+In a low-dimensional model, an analytical solution might be possible, but in one with this many parameters an analytical solution is intractable. 
+Therefore, we use MCMC methods to estimate the Bayesian posterior distribution for these parameters. 
+The basic premise is to use a Markov chain to simulate a random walk through the parameter space (i.e., Metropolis MCMC algorithm), which will eventually converge to a stationary distribution which approximates the posterior distribution. Determining whether a particular chain has converged to this stationary distribution can be complicated, but generally if allowed to run long enough, the chain will converge [@Jones2001]. 
+The “burn-in” is a set of iterations removed at the beginning of the chain. 
+This method is not strictly necessary but we use it as a precautionary measure. 
+In our simulations we removed the first 1,000,000 iterations out of 10,000,000 and “thinned” the chain to one value out of every 2,000, leaving a sample distribution of 4,500. 
+Further assurance that the chain had converged was to compare the mean of the first half of the chain with the second half after removing the “burn-in” and “thinning”. 
+Because these two values were similar we concluded that convergence had been attained. 
+We use these MCMC methods to provide further evaluation of uncertainty in the results below including 95% confidence intervals for some parameters.
+
+Multinomial sample sizes are calculated as the square root of the number of hauls multiplied by the number of composition samples in each year, and scaled to a maximum of 100 across years. 
+Sample sizes were calculated in the same way for fishery age and length compositions, and survey age compositions. 
+Effective sample sizes were assumed equal to the input sample sizes and not estimated or iteratively adjusted within the model. 
+
+Data weights are used to rescale the total likelihood contribution from select log-likelihoods for the different data sources. 
+The log-likelihood weight on the three composition data types (fishery age, fishery length, and survey age) is 0.5. 
+The log-likelihood weight on the (VAST) model-based bottom trawl survey biomass index is 0.25 in the recommended model.
+
+
