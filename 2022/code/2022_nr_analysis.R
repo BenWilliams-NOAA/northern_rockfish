@@ -10,10 +10,12 @@ year = 2022
 species <- "NORK"
 TAC <- c(3681, 4528, 4311)
 
-afsc_user = "WILLIAMSB"
-afsc_pwd = ""
-akfin_user = "bwilliams"
-akfin_pwd = ""
+pwds <- readRDS(here::here('pwds'))
+afsc_user = pwds$afsc_user
+afsc_pwd = pwds$afsc_pwd
+akfin_user = pwds$akfin_user
+akfin_pwd = pwds$akfin_pwd
+
 
 model = "nr"
 dat = "goa_nr_2020"
