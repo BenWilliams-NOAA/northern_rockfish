@@ -1,5 +1,6 @@
 # load ----
 library(groundfishr)
+devtools::unload("gfdata")
 library(gfdata)
 library(funcr)
 theme_set(theme_report())
@@ -10,9 +11,9 @@ species <- "NORK"
 TAC <- c(3681, 4528, 4311)
 
 afsc_user = "WILLIAMSB"
-afsc_pwd = "fish_analysis_001"
+afsc_pwd = ""
 akfin_user = "bwilliams"
-akfin_pwd = "jnu$6350"
+akfin_pwd = ""
 
 model = "nr"
 dat = "goa_nr_2020"
