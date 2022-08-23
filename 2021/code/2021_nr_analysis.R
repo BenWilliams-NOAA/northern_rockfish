@@ -14,9 +14,9 @@ species <- "NORK"
 TAC <- c(3681, 4528, 4311)
 
 afsc_user = "WILLIAMSB"
-afsc_pwd = "H@ines2010_2021"
+afsc_pwd = ""
 akfin_user = "bwilliams"
-akfin_pwd = "jnu$6350"
+akfin_pwd = ""
 
 model = "updated_nr"
 dat = "goa_nr_2020"
