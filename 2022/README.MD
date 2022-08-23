@@ -1,1 +1,2 @@
  - changed base model name from `updated_nr.tpl` to `nr.tpl`
+ - model m18.2_length expands length plus group by 5 cm
